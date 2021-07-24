@@ -6,13 +6,15 @@ const ContactItem = ({ contact }) => {
     const contactContext = useContext(ContactContext);
     const { deleteContact, setCurrent, clearCurrent } = contactContext
 
+    const {_id, email, name, phone , type} = contact;
+
     const onDelete = () => {
-        deleteContact(id);
+        deleteContact(_id);
         clearCurrent();
     }
 
 
-    const {id, email, name, phone , type} = contact;
+    
     return (
         <div className="card bg-light">
             <h3 className="text-primary text-left">
